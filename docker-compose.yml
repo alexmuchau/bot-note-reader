@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  bot-note-reader:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bot-note-reader
+    restart: unless-stopped
+    environment:
+      - NOTE_READER_TOKEN=${NOTE_READER_TOKEN}
+      - NOTION_API_KEY=${NOTION_API_KEY}
+      - NOTION_DATABASE_ID=${NOTION_DATABASE_ID}
+    volumes:
+      - ./data:/app/data
+    networks:
+      - bot-network
+
+networks:
+  bot-network:
+    driver: bridge

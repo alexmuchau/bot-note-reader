@@ -1,0 +1,14 @@
+[project]
+name = "bot-note-reader"
+version = "1.0.0"
+description = "A telegram bot to reads market notes and insert into notion"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "bs4>=0.0.2",
+    "dotenv>=0.9.9",
+    "markitdown[all]>=0.1.2",
+    "qreader>=3.16",
+    "requests>=2.32.5",
+    "telebot>=0.0.5",
+]
